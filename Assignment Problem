@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int cost[3][3] = {
+    {9, 2, 7},
+    {6, 4, 3},
+    {5, 8, 1}
+};
+
+int main() {
+    // Brute force 3! = 6 permutations
+    int min = 99999, temp;
+    int perms[6][3] = {
+        {0,1,2}, {0,2,1}, {1,0,2}, {1,2,0}, {2,0,1}, {2,1,0}
+    };
+    for (int i = 0; i < 6; i++) {
+        temp = 0;
+        for (int j = 0; j < 3; j++)
+            temp += cost[j][perms[i][j]];
+        if (temp < min) min = temp;
+    }
+    printf("Minimum cost = %d\n", min);
+    return 0;
+}
+output:
+Minimum cost = 13

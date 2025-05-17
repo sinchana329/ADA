@@ -20,3 +20,7 @@ int main() {
     patternSearch(text, pattern);
     return 0;
 }
+output:
+Pattern found at index 0
+Pattern found at index 9
+Pattern found at index 12
